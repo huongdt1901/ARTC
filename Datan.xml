@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel>
+<OCL>
+<InitialInvariants>self.amberTime = 5
+</InitialInvariants>
+<EvolutionInvariants>self.amberTime = 5
+</EvolutionInvariants>
+<InitialPreconditions>tranfficFlow = isEmpty
+</InitialPreconditions>
+<EvolutionPreconditions>tranfficFlow = isEmpty
+</EvolutionPreconditions>
+
+<InitialPostconditions>if (state = heavyTraffic) then (signal = green) endif
+</InitialPostconditions>
+<EvolutionPostconditions>if (state = heavyTraffic) then (signal = green) endif
+</EvolutionPostconditions>
+</OCL>
+<Datatypes>
+	<InitialInvariants>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</InitialInvariants>
+	<EvolutionInvariants>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</EvolutionInvariants>
+	
+	<InitialPreconditions>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</InitialPreconditions>
+	<EvolutionPreconditions>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</EvolutionPreconditions>
+	
+	<InitialPostconditions>
+		<state>int</state >
+		<heavyTraffic>int</heavyTraffic>
+		<signal>int</signal>
+		<green>int</green>
+	</InitialPostconditions>
+	<EvolutionPostconditions>
+		<state>int</state >
+		<heavyTraffic>int</heavyTraffic>
+		<signal>int</signal>
+		<green>int</green>
+	</EvolutionPostconditions>
+</Datatypes></datamodel>

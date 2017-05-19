@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel>
+<OCL>
+<InitialInvariants>self.amberTime = 5
+</InitialInvariants>
+<EvolutionInvariants>self.amberTime = 5
+</EvolutionInvariants>
+<InitialPreconditions>tranfficFlow = isEmpty
+</InitialPreconditions>
+<EvolutionPreconditions>tranfficFlow = isEmpty
+</EvolutionPreconditions>
+
+<InitialPostconditions>if (state = heavyTraffic) then ((signal = green) AND (greenTime > 60))
+else if (state = lowTraffic) then ((signal = red) AND (greenTime &lt;= 60)) 
+else if (state = highTraffic) then (direction = CHOOSE)
+else (direction = NO_CHOOSE) endif endif endif
+</InitialPostconditions>
+<EvolutionPostconditions>if (state = heavyTraffic) then ((signal = green) AND (greenTime > 60))
+else if (state = lowTraffic) then ((signal = red) AND (greenTime &lt;= 60)) 
+else if (state = highTraffic) then (direction = CHOOSE)
+else (direction = NO_CHOOSE) endif endif endif
+</EvolutionPostconditions>
+</OCL>
+<Datatypes>
+	<InitialInvariants>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</InitialInvariants>
+	<EvolutionInvariants>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</EvolutionInvariants>
+	
+	<InitialPreconditions>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</InitialPreconditions>
+	<EvolutionPreconditions>
+		<tranfficFlow>bool</tranfficFlow>
+		<isEmpty>bool</isEmpty>
+	</EvolutionPreconditions>
+	
+	<InitialPostconditions>
+		<state>int</state >
+		<heavyTraffic>int</heavyTraffic>
+		<signal>int</signal>
+		<green>int</green>
+		<greenTime>int</greenTime>
+		<lowTraffic>int</lowTraffic>
+		<red>int</red>
+		<highTraffic>int</highTraffic>
+		<direction>int</direction >
+		<CHOOSE>int</CHOOSE >
+		<NO_CHOOSE>int</NO_CHOOSE >
+	</InitialPostconditions>
+	<EvolutionPostconditions>
+		<state>int</state >
+		<heavyTraffic>int</heavyTraffic>
+		<signal>int</signal>
+		<green>int</green>
+		<greenTime>int</greenTime>
+		<lowTraffic>int</lowTraffic>
+		<red>int</red>
+		<highTraffic>int</highTraffic>
+		<direction>int</direction >
+		<CHOOSE>int</CHOOSE >
+		<NO_CHOOSE>int</NO_CHOOSE >
+	</EvolutionPostconditions>
+</Datatypes></datamodel>
